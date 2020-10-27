@@ -35,6 +35,7 @@ public class TextEditorController {
 //            FileReader i= new FileReader("a.txt");
             BufferedReader vstup= new BufferedReader(new FileReader("a.txt"));
  String b =vstup.readLine();
+            while ((b=vstup.readLine())  !=null)
             System.out.println( b);
             myTextFile.setText(b);
   vstup.close();
