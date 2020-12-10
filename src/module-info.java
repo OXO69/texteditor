@@ -3,5 +3,7 @@ module SkupinaB.FX {
     requires javafx.controls;
     opens sample;
     opens textEditor;
+    requires java.sql;
+    opens databaza;
 
 }

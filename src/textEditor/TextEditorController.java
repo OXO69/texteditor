@@ -13,10 +13,10 @@ public class TextEditorController {
 
 
     @FXML
-    public void save()  {
- String a=       myTextFile.getText();
+    public void save() {
+        String a = myTextFile.getText();
         try {
-            BufferedWriter writer= new BufferedWriter(new FileWriter("a.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("a.txt"));
             writer.write(a);
             writer.close();
         } catch (IOException e) {
@@ -30,15 +30,17 @@ public class TextEditorController {
         //nejaka zmena
     }
 
-    public void initialize(){
+    public void initialize() {
         try {
 //            FileReader i= new FileReader("a.txt");
-            BufferedReader vstup= new BufferedReader(new FileReader("a.txt"));
- String b =vstup.readLine();
-            while ((b=vstup.readLine())  !=null)
-            System.out.println( b);
-            myTextFile.setText(b);
-  vstup.close();
+            BufferedReader vstup = new BufferedReader(new FileReader("a.txt"));
+
+            String b ;
+            while ((b = vstup.readLine()) != null) {
+                System.out.println(b);
+                myTextFile.setText(b);
+            }
+            vstup.close();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -49,5 +51,6 @@ public class TextEditorController {
          zobrazit v textarea*/
 
     }
+
 
 }
